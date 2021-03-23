@@ -43,7 +43,7 @@ COPY library-scripts/github-ssh.sh \
     library-scripts/init.vim \
     library-scripts/install-neovim.sh \
     /tmp/library-scripts/
-RUN bash /tmp/library-scripts/install-neovim.sh  \
+RUN bash /tmp/library-scripts/install-neovim.sh "${USERNAME}"  \
     && bash /tmp/library-scripts/github-ssh.sh "${USERNAME}" \
     && bash /tmp/library-scripts/update-bash.sh "${USERNAME}" \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
